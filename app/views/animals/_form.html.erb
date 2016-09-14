@@ -26,4 +26,8 @@
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>
+  <div class="field">
+    <%= select(:sighting, :animal_id, @animals_for_select) %>
+  </div>
+
 <% end %>
