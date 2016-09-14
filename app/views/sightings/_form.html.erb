@@ -23,10 +23,15 @@
     <%= f.label :longitude %><br>
     <%= f.number_field :longitude %>
   </div>
+  
   <div class="field">
-    <%= f.label :animal_id %><br>
-    <%= f.text_field :animal_id %>
+    <%= select(:sighting, :region, options_for_select([['northeast', 'northeast'], ['southeast', 'southeast'], ['northwest', 'northwest'], ['southwest', 'southwest']])) %>
   </div>
+
+  <div class="field">
+    <%= select(:sighting, :animal_id, @animals_for_select) %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

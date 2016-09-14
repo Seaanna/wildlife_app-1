@@ -4,7 +4,15 @@ class SightingsController < ApplicationController
   # GET /sightings
   # GET /sightings.json
   def index
-    @sightings = Sighting.all
+    # IFFFF we have an start date AND and end date
+    if !params[:start_date].nil? && !params[:start_date].empty? && !params[:end_date].nil? && !params[:end_date].empty? && !params[:region].nil? && !params[:region].empty?
+    # then use the where to select sightings
+      @sightings = Sighting.where(date: params[:start_date]..params[:end_date], region: params[:region])
+    # else just set @sightings to all sightings in the DB
+    else
+      @sightings = Sighting.all
+    end
+
   end
 
   # GET /sightings/1
@@ -75,6 +83,6 @@ class SightingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sighting_params
-      params.require(:sighting).permit(:date, :latitude, :longitude, :animal_id)
+      params.require(:sighting).permit(:date, :latitude, :longitude, :region, :animal_id)
     end
 end

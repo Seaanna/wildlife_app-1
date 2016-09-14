@@ -15,9 +15,17 @@
   <%= @animal.kingdom %>
 </p>
 
+<!-- Be able to see Sightings in the show -->
 <p>
-  <strong>Sighting:</strong>
-  <%= @animal.sighting %>
+  <strong>Sightings:</strong>
+  <ul>
+    <!-- For each animal list out the sighting with the date and regions -->
+    <% @animal.sightings.each do |sighting| %>
+        <li>
+            <%= sighting.date %> <%= sighting.region %>
+        </li>
+    <% end %>
+  </ul>
 </p>
 
 <%= link_to 'Edit', edit_animal_path(@animal) %> |

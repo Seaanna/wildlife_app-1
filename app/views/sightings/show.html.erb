@@ -21,14 +21,11 @@
 </p>
 
 <p>
-  <ul>
-    <% @animal.sightings.each do |sighting| %>
-        <li>
-            <%= sighting.common_name %>
-        </li>
-    <% end %>
-  </ul>
+  <strong>Region:</strong>
+  <%= @sighting.region %>
 </p>
+
+
 
 <%= link_to 'Edit', edit_sighting_path(@sighting) %> |
 <%= link_to 'Back', sightings_path %>
