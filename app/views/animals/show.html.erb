@@ -18,7 +18,7 @@
 <!-- Be able to see Sightings in the show -->
 <p>
   <strong>Sightings:</strong>
-  <ul>
+  <ul id="sighting_list">
     <!-- For each animal list out the sighting with the date and regions -->
     <% @animal.sightings.each do |sighting| %>
         <li>
@@ -26,6 +26,15 @@
         </li>
     <% end %>
   </ul>
+</p>
+
+<p>
+  <input type="text" name="sighting[date]" placeholder="Date" id="sighting_date"/>
+  <input type="text" name="sighting[longitude]" placeholder="Longitude" id="sighting_longitude"/>
+  <input type="text" name="sighting[latitude]" placeholder="Latitude" id="sighting_latitude"/>
+  <input type="text" name="sighting[region]" placeholder="Region" id="sighting_region"/>
+  <input type="hidden" name="sighting[animal_id]" id="animal_id" value="<%=@animal.id%>"/>
+  <button id="add_new_sighting_button">Add New Sighting</button>
 </p>
 
 <%= link_to 'Edit', edit_animal_path(@animal) %> |
