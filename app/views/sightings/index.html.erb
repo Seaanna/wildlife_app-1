@@ -30,15 +30,8 @@
   </tbody>
 </table>
 
-<form action="/sightings" method="get">
-  <label for="start_date">Start date</label><br>
-  <input id="start_date" name="start_date" type="text"><br>
-  <label for="end_date">End date</label><br>
-  <input id="end_date" name="end_date" type="text"><br>
-  <label for="region">Region</label><br>
-  <input id="region" name="region" type="text"><br>
-  <button>Run report</button>
-</form>
+
+
 
 
 
@@ -46,3 +39,4 @@
 <br>
 
 <%= link_to 'New Sighting', new_sighting_path %>
+<%= link_to 'Back', animals_path %>

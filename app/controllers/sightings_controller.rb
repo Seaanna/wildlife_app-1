@@ -75,6 +75,16 @@ class SightingsController < ApplicationController
     end
   end
 
+  #method get_sightings from calendar
+  def get_sightings
+    @sightings = Sighting.all
+    sightings = []
+    @sightings.each do |sighting|
+      sightings << {:id => sighting.id, :title => sighting.animal.common_name, :start => sighting.date, url: "/sightings/" + sighting.id.to_s}
+    end
+    render :json => sightings.to_json
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_sighting

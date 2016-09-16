@@ -24,7 +24,7 @@ $("document").ready(function() {
           alert("Received message: " + JSON.stringify(data));
           $("#animal_list").append(
             "<tr>" +
-              "<td>" + data.date + "</td>" +
+              "<td>" + data.common_name + "</td>" +
               "<td>" + data.latin_name + "</td>" +
               "<td>" + data.kingdom + "</td>" +
               "<td>" + '<a href="/animals/' + data.id + '">Show</a>' + "</td>" +
