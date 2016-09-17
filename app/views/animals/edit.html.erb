@@ -1,7 +1,23 @@
-<h1>Editing Animal</h1>
+<h1 class="text-center">Editing Animal</h1>
 
+<div class="space-30"></div>
 <%= render 'form' %>
 
-
-<%= link_to 'Show', @animal %> |
-<%= link_to 'Back', animals_path %>
+<div class="row">
+  <div class="col-xs-12 text-center">
+    <%= link_to 'Show', @animal, class: 'btn btn-primary' %>
+  </div>
+  <div class="col-xs-12">
+    <div class="space-6"></div>
+  </div>
+  <div class="col-xs-12 text-center">
+    <%= link_to 'Back', animals_path, class: 'btn btn-info' %>
+  </div>
+  <div class="col-xs-12">
+    <div class="space-30"></div>
+    <div class="space-30"></div>
+    <div class="space-30"></div>
+    <div class="space-30"></div>
+    <div class="space-30"></div>
+  </div>
+</div>

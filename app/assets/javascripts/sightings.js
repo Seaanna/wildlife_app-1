@@ -22,7 +22,7 @@ $("document").ready(function() {
         success: function(data) {
           alert("Received message: " + JSON.stringify(data));
           $("#sighting_list").append(
-            "<tr>" + "<td>" + data.date + "</td>" + "<td>" + data.latitude + "</td>" + "<td>" +  data.longitude + "</td>" + "<td>" +  data.region + "</td>" + "<td>" + + "</td>" + "</tr>"
+            "<tr>" + "<td>" + data.date + "</td>" + "<td>" + data.latitude + "</td>" + "<td>" +  data.longitude + "</td>" + "<td>" +  data.region + "</td>" + "<td>" + '<a href="/sighting/' + data.id + '/edit" class="btn btn-success">Edit</a>' + "</td>" + "</tr>"
           )
         },
         error: function(jqXHR, textStatus, errorThrown) {

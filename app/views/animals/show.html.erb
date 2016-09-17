@@ -1,33 +1,35 @@
 <p id="notice"><%= notice %></p>
+<div class="text-center bigger">
+  <p class="bigger cav">
+    <strong>Common name:</strong>
+    <%= @animal.common_name %>
+  </p>
 
-<p>
-  <strong>Common name:</strong>
-  <%= @animal.common_name %>
-</p>
+  <p class="bigger cav">
+    <strong>Latin name:</strong>
+    <%= @animal.latin_name %>
+  </p>
 
-<p>
-  <strong>Latin name:</strong>
-  <%= @animal.latin_name %>
-</p>
-
-<p>
-  <strong>Kingdom:</strong>
-  <%= @animal.kingdom %>
-</p>
+  <p class="bigger cav">
+    <strong>Kingdom:</strong>
+    <%= @animal.kingdom %>
+  </p>
+</div>
 <strong>Sightings:</strong>
 <br>
 <br>
 <!-- Be able to see Sightings in the show -->
-<table class="table" id="sighting_list">
+<table class="table table-bordered" id="sighting_list">
 
   <tbody>
     <thead>
-      <tr>
-        <th>Date</th>
-        <th>Latitude</th>
-        <th>Longitude</th>
-        <th>Region</th>
-        <th colspan="5"></th>
+      <tr class="big">
+        <th class="text-center">Date</th>
+        <th class="text-center">Latitude</th>
+        <th class="text-center">Longitude</th>
+        <th class="text-center">Region</th>
+        <th class="text-center">Edit</th>
+        <th class="text-center">Delete</th>
       </tr>
     </thead>
 
@@ -35,12 +37,14 @@
 
     <!-- For each animal list out the sighting with the date and regions -->
     <% @animal.sightings.each do |sighting| %>
-    <tr>
-      <td> <%= sighting.date %> </td>
-      <td> <%= sighting.latitude %> </td>
-      <td> <%= sighting.longitude %> </td>
-      <td> <%= sighting.region %> </td>
-      <td> <%= link_to 'Edit Sightings', edit_sighting_path(sighting)%> </td>
+    <tr class="text-center big">
+      <!-- strftime allows us to format the time better =) -->
+      <td class="vertical_center small cav"> <%= sighting.date.strftime('%m/%d/%y %l:%M%P') %> </td>
+      <td class="vertical_center small cav"> <%= sighting.latitude %> </td>
+      <td class="vertical_center small cav"> <%= sighting.longitude %> </td>
+      <td class="vertical_center small cav"> <%= sighting.region %> </td>
+      <td> <%= link_to 'Edit Sighting', edit_sighting_path(sighting), class: 'btn btn-success cav'%> </td>
+      <td><%= link_to 'Destroy', sighting, class: "btn btn-danger cav", method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <% end %>
   </tbody>
@@ -217,7 +221,7 @@
   </div>
 
   <input type="hidden" name="sighting[animal_id]" id="animal_id" value="<%=@animal.id%>"/>
-  <button id="add_new_sighting_button">Add New Sighting</button>
+  <button id="add_new_sighting_button" class="btn btn-warning">Add New Sighting</button>
 </p>
 
 

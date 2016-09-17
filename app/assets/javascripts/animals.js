@@ -13,7 +13,6 @@ $("document").ready(function() {
           "kingdom": $("#animal_kingdom").val()
         }
       };
-      alert("Sending message: " + JSON.stringify(new_animal));
 
       $.ajax({
         dataType: 'json',
@@ -21,17 +20,21 @@ $("document").ready(function() {
         method: 'POST',
         data: new_animal,
         success: function(data) {
-          alert("Received message: " + JSON.stringify(data));
           $("#animal_list").append(
-            "<tr>" +
-              "<td>" + data.common_name + "</td>" +
-              "<td>" + data.latin_name + "</td>" +
-              "<td>" + data.kingdom + "</td>" +
-              "<td>" + '<a href="/animals/' + data.id + '">Show</a>' + "</td>" +
-              "<td>" + '<a href="/animals/' + data.id + '">Edit</a>' + "</td>" +
-              "<td>" + '<a href="/animals/' + data.id + '">Destroy</a>' + "</td>" +
+            "<tr class='text-center'>" +
+              "<td class='text-center vertical_center small cav'>" + data.common_name + "</td>" +
+              "<td class='text-center vertical_center small cav'>" + data.latin_name + "</td>" +
+              "<td class='text-center vertical_center small cav'>" + data.kingdom + "</td>" +
+              "<td class='text-center vertical_center cav'>" + '<a href="/animals/' + data.id + '" class="btn btn-primary">Show</a>' + "</td>" +
+              "<td class='text-center vertical_center cav'>" + '<a href="/animals/' + data.id + '/edit" class="btn btn-success">Edit</a>' + "</td>" +
+              "<td class='text-center vertical_center cav'>" + '<a data-method="delete" data-confirm="Are you sure?" href="/animals/' + data.id + '" class="btn btn-danger">Destroy</a>' + "</td>" +
+              // notice the 'data-method="delete" data-confirm="Are you sure?"' is necessary to delete and confirm deletion!
             "</tr>"
           );
+          // Clear out values in inputs if the animal is saved
+          $("#animal_common_name").val('');
+          $("#animal_latin_name").val('');
+          $("#animal_kingdom").val('')
         },
         error: function(jqXHR, textStatus, errorThrown) {
           alert("Add new animal failed: " + errorThrown);

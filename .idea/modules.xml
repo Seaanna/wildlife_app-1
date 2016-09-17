@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../hours_logger/.idea/hours_logger.iml" filepath="$PROJECT_DIR$/../hours_logger/.idea/hours_logger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../sea-website/.idea/sea-website.iml" filepath="$PROJECT_DIR$/../sea-website/.idea/sea-website.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/wildlife_app.iml" filepath="$PROJECT_DIR$/.idea/wildlife_app.iml" />
+    </modules>
+  </component>
+</project>

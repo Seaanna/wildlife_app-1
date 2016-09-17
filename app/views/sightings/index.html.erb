@@ -1,42 +1,65 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Sightings</h1>
+<h1 class="text-center">Listing Sightings</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>Region</th>
-      <th>Animal</th>
-      <th colspan="5"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @sightings.each do |sighting| %>
-      <tr>
-        <td><%= sighting.date %></td>
-        <td><%= sighting.latitude %></td>
-        <td><%= sighting.longitude %></td>
-        <td><%= sighting.region %></td>
-        <td><%= sighting.animal.common_name %></td>
-        <td><%= link_to 'Show', sighting %></td>
-        <td><%= link_to 'Edit', edit_sighting_path(sighting) %></td>
-        <td><%= link_to 'Destroy', sighting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="space-20"></div>
+    <table class="table table-bordered">
+      <thead>
+      <tr class="big">
+        <th class="text-center">Date</th>
+        <th class="text-center">Latitude</th>
+        <th class="text-center">Longitude</th>
+        <th class="text-center">Region</th>
+        <th class="text-center">Animal</th>
+        <th class="text-center">Show</th>
+        <th class="text-center">Edit</th>
+        <th class="text-center">Delete</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
+
+      <tbody>
+      <% @sightings.each do |sighting| %>
+        <tr class="text-center big">
+          <td class="vertical_center small"><%= sighting.date.strftime('%m/%d/%y %l:%M%P') %></td>
+          <td class="vertical_center small"><%= sighting.latitude %></td>
+          <td class="vertical_center small"><%= sighting.longitude %></td>
+          <td class="vertical_center small"><%= sighting.region %></td>
+          <td class="vertical_center small"><%= sighting.animal.common_name %></td>
+          <td><%= link_to 'Show', sighting, class: 'btn btn-primary' %></td>
+          <td><%= link_to 'Edit', edit_sighting_path(sighting), class: 'btn btn-success' %></td>
+          <td><%= link_to 'Destroy', sighting, class: "btn btn-danger cav", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 text-center">
+    <div class="space-20"></div>
+    <%= link_to 'New Sighting', new_sighting_path, class: 'btn btn-primary' %>
+  </div>
+  <div class="col-xs-12">
+    <div class="space-6"></div>
+  </div>
+  <div class="col-xs-12 text-center">
+    <%= link_to 'Back', animals_path, class: 'btn btn-info' %>
+  </div>
+  <div class="col-xs-12">
+    <div class="space-30"></div>
+    <div class="space-30"></div>
+    <div class="space-30"></div>
+    <div class="space-30"></div>
+    <div class="space-30"></div>
+    <div class="space-30"></div>
+    <div class="space-30"></div>
+    <div class="space-30"></div>
+    <div class="space-30"></div>
+    <div class="space-30"></div>
+  </div>
+</div>
 
 
-
-
-
-
-
-<br>
-
-<%= link_to 'New Sighting', new_sighting_path %>
-<%= link_to 'Back', animals_path %>

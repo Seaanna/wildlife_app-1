@@ -1,40 +1,58 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Animals</h1>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Common name</th>
-      <th>Latin name</th>
-      <th>Kingdom</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody id="animal_list">
-    <% @animals.each do |animal| %>
-      <tr>
-        <td><%= animal.common_name %></td>
-        <td><%= animal.latin_name %></td>
-        <td><%= animal.kingdom %></td>
-        <td><%= link_to 'Show', animal %></td>
-        <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
-        <td><%= link_to 'Destroy', animal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<p>
-  <input type="text" name="animal[common_name]" placeholder="Common Name" id="animal_common_name"/>
-  <input type="text" name="animal[latin_name]" placeholder="Latin Name" id="animal_latin_name"/>
-  <input type="text" name="animal[kingdom]" placeholder="Kingdom" id="animal_kingdom"/>
-  <button id="add_new_animal_button">Add New Animal</button>
-</p>
-<br>
+<h1 class="text-center">Listing Animals</h1>
+<div class="space-10"></div>
 
 
-<%= link_to 'Sightings', sightings_path %>
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+    <table class="table table-bordered white_background bigger">
+      <thead>
+        <tr>
+          <th class="text-center">Common name</th>
+          <th class="text-center">Latin name</th>
+          <th class="text-center">Kingdom</th>
+          <th class="text-center">Show</th>
+          <th class="text-center">Edit</th>
+          <th class="text-center">Delete</th>
+        </tr>
+      </thead>
 
+      <tbody id="animal_list">
+        <% @animals.each do |animal| %>
+          <tr class="text-center cav">
+            <td class="vertical_center small cav"><%= animal.common_name %></td>
+            <td class="vertical_center small cav"><%= animal.latin_name %></td>
+            <td class="vertical_center small cav"><%= animal.kingdom %></td>
+            <td><%= link_to 'Show', animal, class: "btn btn-primary cav" %></td>
+            <td><%= link_to 'Edit', edit_animal_path(animal), class: "btn btn-success cav" %></td>
+            <td><%= link_to 'Destroy', animal, class: "btn btn-danger cav", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="space-20"></div>
+    <div class="row">
+      <div class="col-sm-3">
+        <input type="text" name="animal[common_name]" placeholder="Common Name" id="animal_common_name" class="form-control" />
+      </div>
+      <br class="visible-xs">
+      <div class="col-sm-3">
+        <input type="text" name="animal[latin_name]" placeholder="Latin Name" id="animal_latin_name" class="form-control" />
+      </div>
+      <br class="visible-xs">
+      <div class="col-sm-3">
+        <input type="text" name="animal[kingdom]" placeholder="Kingdom" id="animal_kingdom" class="form-control"/>
+      </div>
+      <br class="visible-xs">
+      <div class="col-sm-3 text-center">
+        <button id="add_new_animal_button" class="btn btn-warning cav">Add New Animal</button>
+      </div>
+    </div>
+    <div class="space-10"></div>
+    <br>
+    <div id="calendar"></div>
+  </div>
+</div>
 
-<div id="calendar"></div>
+<div class="space-30"></div>

@@ -1,0 +1,267 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require fullcalendar
+ */
+
+
+@font-face {
+  font-family: "Mark";
+  src: font-url("mark.ttf") format("truetype");
+}
+
+.mark_font{
+  font-family: "Mark" !important;
+}
+
+@font-face {
+  font-family: "Caviar";
+  src: font-url("Caviar.ttf") format("truetype");
+}
+
+.cav{
+  font-family: "Caviar" !important;
+}
+
+@font-face {
+  font-family: "Wild";
+  src: font-url("Drifttype.ttf") format("truetype");
+}
+
+.wild{
+  font-family: "Wild" !important;
+}
+
+@font-face {
+  font-family: "Open";
+  src: font-url("OpenSans-Regular.ttf") format("truetype");
+}
+
+.open_sans{
+  font-family: "Open" !important;
+}
+
+.space-32 {
+  max-height: 1px;
+  min-height: 1px;
+  overflow: hidden;
+  margin: 12px 0;
+  margin: 32px 0 31px;
+}
+
+.space-30 {
+  max-height: 1px;
+  min-height: 1px;
+  overflow: hidden;
+  margin: 12px 0;
+  margin: 30px 0 29px;
+}
+
+.space-28 {
+  max-height: 1px;
+  min-height: 1px;
+  overflow: hidden;
+  margin: 12px 0;
+  margin: 28px 0 27px;
+}
+
+.space-26 {
+  max-height: 1px;
+  min-height: 1px;
+  overflow: hidden;
+  margin: 12px 0;
+  margin: 26px 0 25px;
+}
+
+.space-24 {
+  max-height: 1px;
+  min-height: 1px;
+  overflow: hidden;
+  margin: 12px 0;
+  margin: 24px 0 23px;
+}
+
+.space-22 {
+  max-height: 1px;
+  min-height: 1px;
+  overflow: hidden;
+  margin: 12px 0;
+  margin: 22px 0 21px;
+}
+
+.space-20 {
+  max-height: 1px;
+  min-height: 1px;
+  overflow: hidden;
+  margin: 12px 0;
+  margin: 20px 0 19px;
+}
+
+.space-18 {
+  max-height: 1px;
+  min-height: 1px;
+  overflow: hidden;
+  margin: 12px 0;
+  margin: 18px 0 17px;
+}
+
+.space-16 {
+  max-height: 1px;
+  min-height: 1px;
+  overflow: hidden;
+  margin: 12px 0;
+  margin: 16px 0 15px;
+}
+
+.space-14 {
+  max-height: 1px;
+  min-height: 1px;
+  overflow: hidden;
+  margin: 12px 0;
+  margin: 14px 0 13px;
+}
+
+.space-12 {
+  max-height: 1px;
+  min-height: 1px;
+  overflow: hidden;
+  margin: 12px 0;
+  margin: 12px 0 11px;
+}
+
+.space-10 {
+  max-height: 1px;
+  min-height: 1px;
+  overflow: hidden;
+  margin: 12px 0;
+  margin: 10px 0 9px;
+}
+
+.space-8 {
+  max-height: 1px;
+  min-height: 1px;
+  overflow: hidden;
+  margin: 12px 0;
+  margin: 8px 0 7px;
+}
+
+.space-6 {
+  max-height: 1px;
+  min-height: 1px;
+  overflow: hidden;
+  margin: 12px 0;
+  margin: 6px 0 5px;
+}
+
+.space-4 {
+  max-height: 1px;
+  min-height: 1px;
+  overflow: hidden;
+  margin: 12px 0;
+  margin: 4px 0 3px;
+}
+
+.max_250{
+  max-width: 250px;
+}
+
+.max_200{
+  max-width: 200px;
+}
+
+.max_220{
+  max-width: 220px;
+}
+
+.max_100{
+  max-width: 100px;
+}
+
+.max_75{
+  max-width: 75px;
+}
+
+.max_50{
+  max-width: 50px;
+}
+
+.no_wrap{
+  white-space: nowrap;
+}
+
+.smaller{
+  font-size: .8em !important;
+}
+
+.small{
+  font-size: .9em !important;
+}
+
+.normal{
+  font-size: 1em !important;
+}
+
+.big{
+  font-size: 1.2em !important;
+}
+
+.bigger{
+  font-size: 1.4em !important;
+  line-height: 1.3em;
+}
+
+.biggest{
+  font-size: 1.8em !important;
+  line-height: 1.3em;
+}
+
+.huge{
+  font-size: 3em !important;
+}
+
+.btn{
+  color: white !important;
+  min-width: 120px;
+}
+
+.vertical_center{
+  vertical-align: middle !important;
+}
+
+.nature_background{
+  background-image: image_url('nature.jpg');
+  background-size:   100% 100%;
+}
+
+.white_background{
+  background-color: white !important;
+}
+
+.no_margin{
+  margin: 0 !important;
+}
+
+.fc-view-container{
+  background-color: white !important;
+}
+
+table{
+  border-radius: 6px;
+  background-color: white;
+}
+
+h1, h2, h3, h4, p, label{
+  color: white;
+  font-weight: 700;
+}
