@@ -6,32 +6,34 @@
 
 <div class="row">
   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-    <div class="scrollable">
-      <table class="table table-bordered white_background bigger">
-        <thead>
-        <tr>
-          <th class="text-center">Common name</th>
-          <th class="text-center">Latin name</th>
-          <th class="text-center">Kingdom</th>
-          <th class="text-center">Show</th>
-          <th class="text-center">Edit</th>
-          <th class="text-center">Delete</th>
-        </tr>
-        </thead>
-
-        <tbody id="animal_list">
-        <% @animals.each do |animal| %>
-          <tr class="text-center cav">
-            <td class="vertical_center small cav"><%= animal.common_name %></td>
-            <td class="vertical_center small cav"><%= animal.latin_name %></td>
-            <td class="vertical_center small cav"><%= animal.kingdom %></td>
-            <td><%= link_to 'Show', animal, class: "btn btn-primary cav" %></td>
-            <td><%= link_to 'Edit', edit_animal_path(animal), class: "btn btn-success cav" %></td>
-            <td><%= link_to 'Destroy', animal, class: "btn btn-danger cav", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <div class="table-wrapper">
+      <div class="scrollable">
+        <table class="table table-bordered white_background bigger">
+          <thead>
+          <tr>
+            <th class="text-center">Common name</th>
+            <th class="text-center">Latin name</th>
+            <th class="text-center">Kingdom</th>
+            <th class="text-center">Show</th>
+            <th class="text-center">Edit</th>
+            <th class="text-center">Delete</th>
           </tr>
-        <% end %>
-        </tbody>
-      </table>
+          </thead>
+
+          <tbody id="animal_list">
+          <% @animals.each do |animal| %>
+            <tr class="text-center cav">
+              <td class="vertical_center small cav"><%= animal.common_name %></td>
+              <td class="vertical_center small cav"><%= animal.latin_name %></td>
+              <td class="vertical_center small cav"><%= animal.kingdom %></td>
+              <td><%= link_to 'Show', animal, class: "btn btn-primary cav" %></td>
+              <td><%= link_to 'Edit', edit_animal_path(animal), class: "btn btn-success cav" %></td>
+              <td><%= link_to 'Destroy', animal, class: "btn btn-danger cav", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
     <div class="space-20"></div>
     <div class="row">
