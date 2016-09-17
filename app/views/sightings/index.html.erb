@@ -5,35 +5,37 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="space-20"></div>
-    <table class="table table-bordered">
-      <thead>
-      <tr class="big">
-        <th class="text-center">Date</th>
-        <th class="text-center">Latitude</th>
-        <th class="text-center">Longitude</th>
-        <th class="text-center">Region</th>
-        <th class="text-center">Animal</th>
-        <th class="text-center">Show</th>
-        <th class="text-center">Edit</th>
-        <th class="text-center">Delete</th>
-      </tr>
-      </thead>
-
-      <tbody>
-      <% @sightings.each do |sighting| %>
-        <tr class="text-center big">
-          <td class="vertical_center small"><%= sighting.date.strftime('%m/%d/%y %l:%M%P') %></td>
-          <td class="vertical_center small"><%= sighting.latitude %></td>
-          <td class="vertical_center small"><%= sighting.longitude %></td>
-          <td class="vertical_center small"><%= sighting.region %></td>
-          <td class="vertical_center small"><%= sighting.animal.common_name %></td>
-          <td><%= link_to 'Show', sighting, class: 'btn btn-primary' %></td>
-          <td><%= link_to 'Edit', edit_sighting_path(sighting), class: 'btn btn-success' %></td>
-          <td><%= link_to 'Destroy', sighting, class: "btn btn-danger cav", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <div class="scrollable">
+      <table class="table table-bordered">
+        <thead>
+        <tr class="big">
+          <th class="text-center">Date</th>
+          <th class="text-center">Latitude</th>
+          <th class="text-center">Longitude</th>
+          <th class="text-center">Region</th>
+          <th class="text-center">Animal</th>
+          <th class="text-center">Show</th>
+          <th class="text-center">Edit</th>
+          <th class="text-center">Delete</th>
         </tr>
-      <% end %>
-      </tbody>
-    </table>
+        </thead>
+
+        <tbody>
+        <% @sightings.each do |sighting| %>
+          <tr class="text-center big">
+            <td class="vertical_center small"><%= sighting.date.strftime('%m/%d/%y %l:%M%P') %></td>
+            <td class="vertical_center small"><%= sighting.latitude %></td>
+            <td class="vertical_center small"><%= sighting.longitude %></td>
+            <td class="vertical_center small"><%= sighting.region %></td>
+            <td class="vertical_center small"><%= sighting.animal.common_name %></td>
+            <td><%= link_to 'Show', sighting, class: 'btn btn-primary' %></td>
+            <td><%= link_to 'Edit', edit_sighting_path(sighting), class: 'btn btn-success' %></td>
+            <td><%= link_to 'Destroy', sighting, class: "btn btn-danger cav", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 
